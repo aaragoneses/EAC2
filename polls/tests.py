@@ -11,6 +11,7 @@ class MySeleniumTests(StaticLiveServerTestCase):
     def setUpClass(cls):
         super().setUpClass()
         opts = Options()
+        opts.add_argument("--headless")  # Activar modo headless
         cls.selenium = WebDriver(options=opts)
         cls.selenium.implicitly_wait(5)
         cls.live_server_url = 'http://0.0.0.0:8000'  # Sobrescribimos la URL del servidor
